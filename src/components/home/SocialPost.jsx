@@ -35,23 +35,23 @@ const SocialPost = ({ post }) => {
           className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg-secondary)]/90 px-3 py-2 text-xs font-semibold text-[var(--text-h)] backdrop-blur-sm">
+        <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg-secondary)]/90 px-3 py-2 font-[var(--sans)] text-[length:var(--font-xs)] font-semibold text-[var(--text-h)] backdrop-blur-sm">
           <InstagramIcon size={14} />
           {post.platform}
         </div>
 
-        <div className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1.5 text-xs text-white backdrop-blur-sm">
+        <div className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1.5 font-[var(--sans)] text-[length:var(--font-xs)] text-white backdrop-blur-sm">
           <Heart size={13} fill="currentColor" />
           {post.likes}
         </div>
       </div>
 
       <div className="p-5">
-        <p className="line-clamp-3 text-sm leading-6 text-[var(--text)]">
+        <p className="font-[var(--sans)] text-[length:var(--font-sm)] leading-6 text-[var(--text)]">
           {post.caption}
         </p>
 
-        <p className="mt-4 text-xs font-medium text-[var(--text)] opacity-60">
+        <p className="mt-4 font-[var(--sans)] text-[length:var(--font-xs)] font-medium text-[var(--text)] opacity-60">
           {post.date}
         </p>
       </div>

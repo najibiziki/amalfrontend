@@ -30,6 +30,7 @@ const DonationModal = ({ isOpen, onClose }) => {
       console.error("Unable to copy RIB", error);
     }
   };
+
   return (
     <div
       className="
@@ -93,7 +94,8 @@ const DonationModal = ({ isOpen, onClose }) => {
           rounded-full
           border border-white/[0.08]
           bg-white/[0.04]
-          text-base
+          font-[var(--sans)]
+          text-[length:var(--font-base)]
           text-white/60
           transition-all
           hover:bg-white/[0.08]
@@ -102,7 +104,7 @@ const DonationModal = ({ isOpen, onClose }) => {
           sm:top-5
           sm:h-9
           sm:w-9
-          sm:text-lg
+          sm:text-[length:var(--font-lg)]
         "
         >
           ×
@@ -157,12 +159,13 @@ const DonationModal = ({ isOpen, onClose }) => {
               {/* Label */}
               <p
                 className="
-                text-[10px]
+                font-[var(--sans)]
+                text-[length:var(--font-xs)]
                 font-medium
                 uppercase
                 tracking-[0.18em]
                 text-purple-300
-                sm:text-xs
+                sm:text-[length:var(--font-sm)]
                 sm:tracking-[0.2em]
               "
               >
@@ -174,13 +177,14 @@ const DonationModal = ({ isOpen, onClose }) => {
                 id="donation-title"
                 className="
                 mt-2
-                text-2xl
+                font-[var(--heading)]
+                text-[length:var(--font-xl)]
                 font-semibold
                 leading-tight
                 tracking-tight
                 text-white
                 sm:mt-3
-                sm:text-3xl
+                sm:text-[length:var(--font-2xl)]
               "
               >
                 Ensemble, faisons
@@ -191,11 +195,12 @@ const DonationModal = ({ isOpen, onClose }) => {
               <p
                 className="
                 mt-3
-                text-xs
+                font-[var(--sans)]
+                text-[length:var(--font-xs)]
                 leading-5
                 text-white/55
                 sm:mt-5
-                sm:text-sm
+                sm:text-[length:var(--font-sm)]
                 sm:leading-6
               "
               >
@@ -206,11 +211,12 @@ const DonationModal = ({ isOpen, onClose }) => {
               <p
                 className="
                 mt-3
-                text-xs
+                font-[var(--sans)]
+                text-[length:var(--font-xs)]
                 leading-5
                 text-white/55
                 sm:mt-4
-                sm:text-sm
+                sm:text-[length:var(--font-sm)]
                 sm:leading-6
               "
               >
@@ -230,7 +236,7 @@ const DonationModal = ({ isOpen, onClose }) => {
                 "
                 />
 
-                <span className="text-xs text-white/45">
+                <span className="font-[var(--sans)] text-[length:var(--font-xs)] text-white/45">
                   Don directement vers le compte de l'association
                 </span>
               </div>
@@ -240,18 +246,19 @@ const DonationModal = ({ isOpen, onClose }) => {
           {/* ================= RIGHT ================= */}
           <div className="p-5 sm:p-6 md:p-9">
             {/* Heading */}
-            <p className="text-sm font-medium text-white">
+            <p className="font-[var(--sans)] text-[length:var(--font-sm)] font-medium text-white">
               Comment faire un don ?
             </p>
 
             <p
               className="
               mt-1.5
-              text-xs
+              font-[var(--sans)]
+              text-[length:var(--font-xs)]
               leading-5
               text-white/45
               sm:mt-2
-              sm:text-sm
+              sm:text-[length:var(--font-sm)]
               sm:leading-6
             "
             >
@@ -283,11 +290,12 @@ const DonationModal = ({ isOpen, onClose }) => {
               >
                 <p
                   className="
-                  text-[10px]
+                  font-[var(--sans)]
+                  text-[length:var(--font-xs)]
                   uppercase
                   tracking-[0.12em]
                   text-purple-300
-                  sm:text-xs
+                  sm:text-[length:var(--font-sm)]
                   sm:tracking-[0.15em]
                 "
                 >
@@ -299,20 +307,22 @@ const DonationModal = ({ isOpen, onClose }) => {
               <div className="space-y-3 p-4 sm:space-y-4 sm:p-5">
                 {/* Association */}
                 <div>
-                  <p className="text-[11px] text-white/30 sm:text-xs">
+                  <p className="font-[var(--sans)] text-[length:var(--font-xs)] text-white/30">
                     Bénéficiaire
                   </p>
 
-                  <p className="mt-0.5 text-xs font-medium text-white sm:mt-1 sm:text-sm">
+                  <p className="mt-0.5 font-[var(--sans)] text-[length:var(--font-xs)] font-medium text-white sm:mt-1 sm:text-[length:var(--font-sm)]">
                     {bankInfo.association}
                   </p>
                 </div>
 
                 {/* Bank */}
                 <div>
-                  <p className="text-[11px] text-white/30 sm:text-xs">Banque</p>
+                  <p className="font-[var(--sans)] text-[length:var(--font-xs)] text-white/30">
+                    Banque
+                  </p>
 
-                  <p className="mt-0.5 text-xs font-medium text-white sm:mt-1 sm:text-sm">
+                  <p className="mt-0.5 font-[var(--sans)] text-[length:var(--font-xs)] font-medium text-white sm:mt-1 sm:text-[length:var(--font-sm)]">
                     {bankInfo.bank}
                   </p>
                 </div>
@@ -329,7 +339,7 @@ const DonationModal = ({ isOpen, onClose }) => {
                   "
                   >
                     <div className="min-w-0">
-                      <p className="text-[11px] text-white/30 sm:text-xs">
+                      <p className="font-[var(--sans)] text-[length:var(--font-xs)] text-white/30">
                         RIB
                       </p>
 
@@ -337,12 +347,13 @@ const DonationModal = ({ isOpen, onClose }) => {
                         className="
                         mt-0.5
                         break-all
-                        text-xs
+                        font-[var(--sans)]
+                        text-[length:var(--font-xs)]
                         font-medium
                         tracking-wide
                         text-white
                         sm:mt-1
-                        sm:text-sm
+                        sm:text-[length:var(--font-sm)]
                       "
                       >
                         {bankInfo.rib}
@@ -359,7 +370,8 @@ const DonationModal = ({ isOpen, onClose }) => {
                       bg-white/[0.04]
                       px-2.5
                       py-1.5
-                      text-[11px]
+                      font-[var(--sans)]
+                      text-[length:var(--font-xs)]
                       font-medium
                       text-white/60
                       transition
@@ -367,7 +379,7 @@ const DonationModal = ({ isOpen, onClose }) => {
                       hover:text-white
                       sm:px-3
                       sm:py-2
-                      sm:text-xs
+                      sm:text-[length:var(--font-sm)]
                     "
                     >
                       Copier
@@ -377,18 +389,21 @@ const DonationModal = ({ isOpen, onClose }) => {
 
                 {/* IBAN */}
                 <div>
-                  <p className="text-[11px] text-white/30 sm:text-xs">IBAN</p>
+                  <p className="font-[var(--sans)] text-[length:var(--font-xs)] text-white/30">
+                    IBAN
+                  </p>
 
                   <p
                     className="
                     mt-0.5
                     break-all
-                    text-xs
+                    font-[var(--sans)]
+                    text-[length:var(--font-xs)]
                     font-medium
                     tracking-wide
                     text-white
                     sm:mt-1
-                    sm:text-sm
+                    sm:text-[length:var(--font-sm)]
                   "
                   >
                     {bankInfo.iban}
@@ -409,18 +424,19 @@ const DonationModal = ({ isOpen, onClose }) => {
               sm:p-4
             "
             >
-              <p className="text-xs font-medium text-white sm:text-sm">
+              <p className="font-[var(--sans)] text-[length:var(--font-xs)] font-medium text-white sm:text-[length:var(--font-sm)]">
                 Après votre virement
               </p>
 
               <p
                 className="
                 mt-1.5
-                text-[11px]
+                font-[var(--sans)]
+                text-[length:var(--font-xs)]
                 leading-4
                 text-white/40
                 sm:mt-2
-                sm:text-xs
+                sm:text-[length:var(--font-sm)]
                 sm:leading-5
               "
               >
@@ -444,7 +460,8 @@ const DonationModal = ({ isOpen, onClose }) => {
               bg-[#6d28a9]
               px-4
               py-3
-              text-xs
+              font-[var(--sans)]
+              text-[length:var(--font-xs)]
               font-semibold
               text-white
               shadow-[0_10px_30px_rgba(109,40,169,0.25)]
@@ -455,7 +472,7 @@ const DonationModal = ({ isOpen, onClose }) => {
               sm:mt-5
               sm:px-5
               sm:py-3.5
-              sm:text-sm
+              sm:text-[length:var(--font-sm)]
             "
             >
               Merci pour votre soutien ❤️

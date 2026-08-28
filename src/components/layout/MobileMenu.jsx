@@ -48,7 +48,7 @@ const MobileMenu = ({ isOpen, onClose, onSupport }) => {
               className={({ isActive }) =>
                 `
                   rounded-xl px-4 py-3.5
-                  text-sm font-medium
+                  font-[var(--sans)] text-[length:var(--font-sm)] font-medium
                   transition-colors duration-200
                   ${
                     isActive
@@ -70,9 +70,7 @@ const MobileMenu = ({ isOpen, onClose, onSupport }) => {
               onSupport();
             }}
             className="w-full justify-center"
-          >
-            Nous soutenir
-          </SupportButton>
+          ></SupportButton>
         </nav>
       </div>
     </div>

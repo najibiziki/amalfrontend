@@ -37,23 +37,26 @@ const Mission = () => {
             </div>
 
             <div className="absolute -bottom-7 -right-4 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 shadow-[var(--shadow)] sm:right-8">
-              <p className="text-3xl font-bold text-[var(--accent)]">01</p>
-              <p className="mt-1 text-sm font-medium text-[var(--text)]">
+              <p className="font-[var(--heading)] text-[length:var(--font-2xl)] font-bold text-[var(--accent)]">
+                01
+              </p>
+
+              <p className="mt-1 font-[var(--sans)] text-[length:var(--font-sm)] font-medium text-[var(--text)]">
                 Les personnes d'abord.
               </p>
             </div>
           </div>
 
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+            <p className="mb-3 font-[var(--sans)] text-[length:var(--font-sm)] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
               Pourquoi nous existons
             </p>
 
-            <h2 className="text-4xl font-bold leading-tight tracking-tight text-[var(--text-h)] sm:text-5xl">
+            <h2 className="font-[var(--heading)] text-[length:var(--font-2xl)] font-bold leading-tight tracking-tight text-[var(--text-h)] sm:text-[length:var(--font-3xl)]">
               Nous croyons que le changement commence avec les personnes.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-[var(--text)]">
+            <p className="mt-6 font-[var(--sans)] text-[length:var(--font-lg)] leading-8 text-[var(--text)]">
               Notre mission est simple : accompagner les personnes, renforcer
               les communautés et créer des opportunités pour un avenir meilleur.
             </p>
@@ -69,11 +72,11 @@ const Mission = () => {
                     </div>
 
                     <div>
-                      <h3 className="font-bold text-[var(--text-h)]">
+                      <h3 className="font-[var(--heading)] text-[length:var(--font-base)] font-bold text-[var(--text-h)]">
                         {value.title}
                       </h3>
 
-                      <p className="mt-1 text-sm leading-6 text-[var(--text)]">
+                      <p className="mt-1 font-[var(--sans)] text-[length:var(--font-sm)] leading-6 text-[var(--text)]">
                         {value.description}
                       </p>
                     </div>

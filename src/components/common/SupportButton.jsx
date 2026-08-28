@@ -10,7 +10,7 @@ const SupportButton = ({ children = "soutenir", className = "", onClick }) => {
         border border-purple-300/10
         bg-[#6d28a9]
         px-4 py-2
-        text-[12px] font-semibold
+        font-[var(--sans)] text-[length:var(--font-sm)] font-semibold
         text-white
         shadow-[0_8px_25px_rgba(109,40,169,0.22)]
         transition-all duration-300

@@ -39,22 +39,23 @@ const ArrowIcon = () => (
 
 const SocialStories = () => {
   const { posts, loading, error } = useInstagramPosts();
+
   return (
     <section className="overflow-hidden bg-[var(--bg-secondary)] py-24">
       <Container>
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
+            <div className="mb-4 flex items-center gap-2 font-[var(--sans)] text-[length:var(--font-sm)] font-semibold text-[var(--accent)]">
               <InstagramIcon />
               <span>De notre communauté</span>
             </div>
 
-            <h2 className="text-4xl font-bold tracking-tight text-[var(--text-h)] sm:text-5xl">
+            <h2 className="font-[var(--heading)] text-[length:var(--font-2xl)] font-bold tracking-tight text-[var(--text-h)] sm:text-[length:var(--font-3xl)]">
               Les histoires de
               <span className="text-[var(--text)]"> notre parcours.</span>
             </h2>
 
-            <p className="mt-4 max-w-xl text-[var(--text)]">
+            <p className="mt-4 max-w-xl font-[var(--sans)] text-[length:var(--font-base)] text-[var(--text)]">
               Un aperçu des personnes, des moments et des histoires qui donnent
               vie à notre engagement.
             </p>
@@ -62,10 +63,14 @@ const SocialStories = () => {
         </div>
 
         <div className="social-stories-scroll mt-12 flex gap-6 overflow-x-auto pb-6">
-          {loading && <p>Chargement...</p>}
+          {loading && (
+            <p className="font-[var(--sans)] text-[length:var(--font-sm)]">
+              Chargement...
+            </p>
+          )}
 
           {error && (
-            <p className="text-sm text-red-500">
+            <p className="font-[var(--sans)] text-[length:var(--font-sm)] text-red-500">
               Impossible de charger Instagram.
             </p>
           )}

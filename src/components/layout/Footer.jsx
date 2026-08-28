@@ -22,16 +22,16 @@ const Footer = ({ onSupport }) => {
         {/* Mission */}
         <div className="border-b border-white/[0.06] py-16 sm:py-20">
           <div className="max-w-3xl">
-            <span className="mb-4 inline-flex items-center rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/[0.07] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--accent)]">
+            <span className="mb-4 inline-flex items-center rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/[0.07] px-3 py-1.5 font-[var(--sans)] text-[length:var(--font-xs)] font-medium uppercase tracking-[0.18em] text-[var(--accent)]">
               Notre mission
             </span>
 
-            <h2 className="max-w-3xl text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-[var(--text-h)] sm:text-4xl lg:text-5xl">
+            <h2 className="max-w-3xl font-[var(--heading)] text-[length:var(--font-3xl)] font-semibold leading-[1.08] tracking-[-0.03em] text-[var(--text-h)] sm:text-[length:var(--font-4xl)] lg:text-[length:var(--font-5xl)]">
               Chaque geste peut devenir{" "}
               <span className="text-[var(--accent)]">un nouveau départ.</span>
             </h2>
 
-            <p className="mt-5 max-w-2xl text-sm leading-6 text-[var(--text)] sm:text-base">
+            <p className="mt-5 max-w-2xl font-[var(--sans)] text-[length:var(--font-sm)] leading-6 text-[var(--text)] sm:text-[length:var(--font-base)]">
               Ensemble, nous œuvrons aux côtés des personnes et des communautés
               pour apporter aide, dignité et espoir à celles et ceux qui en ont
               besoin.
@@ -53,14 +53,14 @@ const Footer = ({ onSupport }) => {
                 <AmalLogo className="h-11 w-11 transition-transform duration-300 group-hover:scale-105" />
 
                 <span
-                  className="text-lg font-semibold text-[var(--text-h)] transition-colors duration-200 group-hover:text-[var(--accent)]"
+                  className="font-[var(--heading)] text-[length:var(--font-lg)] font-semibold text-[var(--text-h)] transition-colors duration-200 group-hover:text-[var(--accent)]"
                   dir="rtl"
                 >
                   أمل
                 </span>
               </Link>
 
-              <p className="mt-4 w-full max-w-sm text-center text-sm leading-6 text-[var(--text)] sm:text-left">
+              <p className="mt-4 w-full max-w-sm text-center font-[var(--sans)] text-[length:var(--font-sm)] leading-6 text-[var(--text)] sm:text-left">
                 Une association engagée aux côtés des personnes et des
                 communautés pour créer des changements durables et solidaires.
               </p>
@@ -69,7 +69,7 @@ const Footer = ({ onSupport }) => {
             {/* Navigation */}
             <div className="text-center sm:text-left">
               <div className="mb-6">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-h)]">
+                <h3 className="font-[var(--heading)] text-[length:var(--font-xs)] font-semibold uppercase tracking-[0.18em] text-[var(--text-h)]">
                   Navigation
                 </h3>
 
@@ -78,32 +78,32 @@ const Footer = ({ onSupport }) => {
 
               <nav className="flex flex-col gap-3">
                 <Link
+                  to="/"
+                  className="font-[var(--sans)] text-[length:var(--font-sm)] text-[var(--text)] transition-all duration-200 hover:text-[var(--accent)] sm:hover:translate-x-1"
+                >
+                  Accueil
+                </Link>
+
+                <Link
                   to="/about"
-                  className="text-sm text-[var(--text)] transition-all duration-200 hover:text-[var(--accent)] sm:hover:translate-x-1"
+                  className="font-[var(--sans)] text-[length:var(--font-sm)] text-[var(--text)] transition-all duration-200 hover:text-[var(--accent)] sm:hover:translate-x-1"
                 >
                   À propos
                 </Link>
-
-                <a
-                  href="mailto:contact@example.org"
-                  className="text-sm text-[var(--text)] transition-all duration-200 hover:text-[var(--accent)] sm:hover:translate-x-1"
-                >
-                  Contact
-                </a>
               </nav>
             </div>
 
             {/* Contact */}
             <div className="text-center sm:text-left">
               <div className="mb-6">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-h)]">
+                <h3 className="font-[var(--heading)] text-[length:var(--font-xs)] font-semibold uppercase tracking-[0.18em] text-[var(--text-h)]">
                   Contact
                 </h3>
 
                 <div className="mx-auto mt-3 h-px w-8 bg-[var(--accent)]/60 sm:mx-0 sm:w-10" />
               </div>
 
-              <div className="flex flex-col gap-3 text-sm text-[var(--text)]">
+              <div className="flex flex-col gap-3 font-[var(--sans)] text-[length:var(--font-sm)] text-[var(--text)]">
                 <span>Maroc</span>
 
                 <a
@@ -197,11 +197,11 @@ const Footer = ({ onSupport }) => {
 
         {/* Bottom */}
         <div className="flex flex-col gap-3 py-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
-          <p className="text-xs text-[var(--text)]">
+          <p className="font-[var(--sans)] text-[length:var(--font-xs)] text-[var(--text)]">
             © {new Date().getFullYear()} Association. Tous droits réservés.
           </p>
 
-          <p className="text-xs text-[var(--text)]/60">
+          <p className="font-[var(--sans)] text-[length:var(--font-xs)] text-[var(--text)]/60">
             Ensemble, pour un avenir meilleur.
           </p>
         </div>

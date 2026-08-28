@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 import AmalLogo from "../common/AmalLogo";
 import SupportButton from "../common/SupportButton";
+
 const navItems = [
   { label: "Accueil", to: "/" },
   { label: "À propos", to: "/about" },
@@ -68,7 +69,7 @@ const Navbar = ({ onSupport }) => {
                 className={({ isActive }) =>
                   `
                   rounded-lg px-3.5 py-2.5
-                  text-sm font-medium
+                  font-[var(--sans)] text-[length:var(--font-sm)] font-medium
                   transition-all duration-300
                   ${
                     isActive
@@ -122,6 +123,7 @@ const Navbar = ({ onSupport }) => {
             </span>
           </button>
         </div>
+
         <MobileMenu
           isOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}

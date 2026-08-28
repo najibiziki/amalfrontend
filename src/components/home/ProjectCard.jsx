@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
           className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        <div className="absolute left-4 top-4 rounded-full border border-[var(--border)] bg-[var(--bg-secondary)]/90 px-3 py-1.5 text-xs font-semibold text-[var(--text-h)] backdrop-blur-sm">
+        <div className="absolute left-4 top-4 rounded-full border border-[var(--border)] bg-[var(--bg-secondary)]/90 px-3 py-1.5 font-[var(--sans)] text-[length:var(--font-xs)] font-semibold text-[var(--text-h)] backdrop-blur-sm">
           {project.category}
         </div>
 
@@ -27,18 +27,18 @@ const ProjectCard = ({ project }) => {
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold text-[var(--text-h)]">
+        <h3 className="font-[var(--heading)] text-[length:var(--font-xl)] font-bold text-[var(--text-h)]">
           {project.title}
         </h3>
 
-        <p className="mt-3 text-sm leading-6 text-[var(--text)]">
+        <p className="mt-3 font-[var(--sans)] text-[length:var(--font-sm)] leading-6 text-[var(--text)]">
           {project.description}
         </p>
 
         <button
           type="button"
           onClick={handleOpenProject}
-          className="mt-5 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-strong)]"
+          className="mt-5 font-[var(--sans)] text-[length:var(--font-sm)] font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-strong)]"
         >
           Découvrir le projet →
         </button>

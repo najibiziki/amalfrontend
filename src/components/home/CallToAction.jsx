@@ -14,12 +14,12 @@ const CallToAction = () => {
               <Heart size={24} fill="currentColor" />
             </div>
 
-            <h2 className="mt-7 text-4xl font-bold tracking-tight text-[var(--text-h)] sm:text-5xl">
+            <h2 className="mt-7 font-[var(--heading)] text-[length:var(--font-2xl)] font-bold tracking-tight text-[var(--text-h)] sm:text-[length:var(--font-3xl)]">
               Le changement commence avec
               <span className="text-[var(--text)]"> une personne.</span>
             </h2>
 
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-[var(--text)]">
+            <p className="mx-auto mt-5 max-w-xl font-[var(--sans)] text-[length:var(--font-lg)] leading-8 text-[var(--text)]">
               Que vous soyez bénévole, donateur, que vous partagiez notre
               histoire ou que vous souhaitiez simplement aider — vous pouvez
               faire partie de quelque chose de plus grand.
@@ -28,7 +28,7 @@ const CallToAction = () => {
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center rounded-full border border-[var(--accent-border)] px-6 py-3.5 text-sm font-bold text-[var(--text-h)] transition hover:bg-[var(--accent-bg)]"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--accent-border)] px-6 py-3.5 font-[var(--sans)] text-[length:var(--font-sm)] font-bold text-[var(--text-h)] transition hover:bg-[var(--accent-bg)]"
               >
                 Découvrir nos projets
               </a>

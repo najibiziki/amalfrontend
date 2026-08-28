@@ -11,7 +11,7 @@ const Hero = ({ onSupport }) => {
       <Container>
         <div className="relative grid min-h-[680px] items-center gap-12 py-20 lg:grid-cols-2 lg:py-24">
           <div className="max-w-2xl">
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--accent-border)] bg-[var(--accent-bg)] px-4 py-2 text-sm font-medium text-[var(--accent)] backdrop-blur-sm">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--accent-border)] bg-[var(--accent-bg)] px-4 py-2 font-[var(--sans)] text-[length:var(--font-sm)] font-medium text-[var(--accent)] backdrop-blur-sm">
               <Sparkles size={16} />
 
               <span>Créons le changement, ensemble</span>
@@ -24,7 +24,7 @@ const Hero = ({ onSupport }) => {
               </span>
             </div>
 
-            <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-[var(--text-h)] sm:text-6xl lg:text-7xl">
+            <h1 className="font-[var(--heading)] text-[length:var(--font-3xl)] font-bold leading-[1.05] tracking-tight text-[var(--text-h)] sm:text-[length:var(--font-4xl)] lg:text-[length:var(--font-5xl)]">
               Chaque personne
               <span className="block text-[var(--text)]">
                 mérite une chance.
@@ -34,12 +34,15 @@ const Hero = ({ onSupport }) => {
             <div className="mt-5 flex items-center gap-3">
               <span className="h-px w-8 bg-[var(--accent)]/50" />
 
-              <p dir="rtl" className="text-lg font-medium text-[var(--accent)]">
+              <p
+                dir="rtl"
+                className="font-[var(--sans)] text-[length:var(--font-lg)] font-medium text-[var(--accent)]"
+              >
                 لأن كل إنسان يستحق فرصة
               </p>
             </div>
 
-            <p className="mt-5 max-w-xl text-lg leading-8 text-[var(--text)] sm:text-xl">
+            <p className="mt-5 max-w-xl font-[var(--sans)] text-[length:var(--font-lg)] leading-8 text-[var(--text)] sm:text-[length:var(--font-xl)]">
               Nous croyons que lorsque les personnes se rassemblent, de petits
               gestes de solidarité peuvent créer un changement durable dans les
               communautés.
@@ -63,7 +66,7 @@ const Hero = ({ onSupport }) => {
                 {["A", "M", "S", "N"].map((letter) => (
                   <div
                     key={letter}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--bg)] bg-[var(--bg-secondary)] text-sm font-semibold text-[var(--accent)]"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--bg)] bg-[var(--bg-secondary)] font-[var(--sans)] text-[length:var(--font-sm)] font-semibold text-[var(--accent)]"
                   >
                     {letter}
                   </div>
@@ -71,15 +74,18 @@ const Hero = ({ onSupport }) => {
               </div>
 
               <div>
-                <p className="text-sm text-[var(--text)]">
+                <p className="font-[var(--sans)] text-[length:var(--font-sm)] text-[var(--text)]">
                   Rejoignez une communauté grandissante
                 </p>
 
-                <p className="font-semibold text-[var(--text-h)]">
+                <p className="font-[var(--sans)] text-[length:var(--font-base)] font-semibold text-[var(--text-h)]">
                   qui agit pour un avenir meilleur.
                 </p>
 
-                <p dir="rtl" className="mt-1 text-xs text-[var(--accent)]">
+                <p
+                  dir="rtl"
+                  className="mt-1 font-[var(--sans)] text-[length:var(--font-xs)] text-[var(--accent)]"
+                >
                   يدًا بيد، نصنع الأمل
                 </p>
               </div>
@@ -101,17 +107,17 @@ const Hero = ({ onSupport }) => {
                   </div>
 
                   <div>
-                    <p className="text-sm text-[var(--text)]">
+                    <p className="font-[var(--sans)] text-[length:var(--font-sm)] text-[var(--text)]">
                       Ensemble, nous avons
                     </p>
 
-                    <p className="text-xl font-bold text-[var(--text-h)]">
+                    <p className="font-[var(--heading)] text-[length:var(--font-xl)] font-bold text-[var(--text-h)]">
                       fait la différence.
                     </p>
 
                     <p
                       dir="rtl"
-                      className="mt-1 text-sm font-medium text-[var(--accent)]"
+                      className="mt-1 font-[var(--sans)] text-[length:var(--font-sm)] font-medium text-[var(--accent)]"
                     >
                       معًا نصنع الفرق
                     </p>
@@ -122,7 +128,7 @@ const Hero = ({ onSupport }) => {
 
             <div
               dir="rtl"
-              className="absolute -bottom-8 -left-4 z-10 text-4xl font-bold text-[var(--accent)]/10 sm:-left-8 sm:text-5xl"
+              className="absolute -bottom-8 -left-4 z-10 font-[var(--heading)] text-[length:var(--font-2xl)] font-bold text-[var(--accent)]/10 sm:-left-8 sm:text-[length:var(--font-3xl)]"
             >
               أمل
             </div>
