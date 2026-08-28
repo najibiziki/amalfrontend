@@ -1,20 +1,16 @@
-const SupportButton = ({
-  children = "Nous soutenir",
-  className = "",
-  onClick,
-}) => {
+const SupportButton = ({ children = "soutenir", className = "", onClick }) => {
   return (
     <button
       type="button"
       onClick={onClick}
       className={`
         group
-        inline-flex items-center gap-2.5
+        inline-flex items-center gap-2
         rounded-xl
         border border-purple-300/10
         bg-[#6d28a9]
-        px-4.5 py-2.5
-        text-sm font-semibold
+        px-4 py-2
+        text-[12px] font-semibold
         text-white
         shadow-[0_8px_25px_rgba(109,40,169,0.22)]
         transition-all duration-300
@@ -30,7 +26,7 @@ const SupportButton = ({
 
       <span
         className="
-          flex h-6 w-6 items-center justify-center
+          flex h-5 w-5 items-center justify-center
           rounded-full
           bg-white/[0.08]
           transition-all duration-300
@@ -41,7 +37,7 @@ const SupportButton = ({
         <svg
           viewBox="0 0 24 24"
           className="
-            h-3.5 w-3.5
+            h-3 w-3
             fill-none
             stroke-current
             transition-all duration-300

@@ -37,9 +37,7 @@ const Footer = ({ onSupport }) => {
               besoin.
             </p>
 
-            <SupportButton onClick={onSupport} className="mt-7">
-              Nous soutenir
-            </SupportButton>
+            <SupportButton onClick={onSupport} className="mt-7" />
           </div>
         </div>
 

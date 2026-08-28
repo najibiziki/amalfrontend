@@ -19,10 +19,6 @@ const FeaturedProjects = () => {
               <span className="text-[var(--text)]"> du sens.</span>
             </h2>
           </div>
-
-          <button className="text-sm font-semibold text-[var(--text)] transition hover:text-[var(--accent)]">
-            Voir tous nos projets →
-          </button>
         </div>
 
         {loading && (

@@ -27,7 +27,6 @@ const Mission = () => {
     <section className="bg-[var(--bg-secondary)] py-24">
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Image */}
           <div className="relative">
             <div className="overflow-hidden rounded-[2rem]">
               <img
@@ -45,7 +44,6 @@ const Mission = () => {
             </div>
           </div>
 
-          {/* Content */}
           <div>
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
               Pourquoi nous existons

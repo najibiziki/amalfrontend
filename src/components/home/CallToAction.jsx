@@ -27,14 +27,6 @@ const CallToAction = () => {
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3.5 text-sm font-bold text-[#16171d] transition hover:bg-[var(--accent-strong)]"
-              >
-                Agir à nos côtés
-                <ArrowRight size={17} />
-              </a>
-
-              <a
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-full border border-[var(--accent-border)] px-6 py-3.5 text-sm font-bold text-[var(--text-h)] transition hover:bg-[var(--accent-bg)]"
               >

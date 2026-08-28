@@ -9,13 +9,11 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
       aria-label="أمل"
     >
       <defs>
-        {/* Soft ambient glow */}
         <radialGradient id="amalAura" cx="50%" cy="48%" r="55%">
           <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.16" />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
         </radialGradient>
 
-        {/* Main elegant gradient */}
         <linearGradient
           id="amalMain"
           x1="14"
@@ -29,7 +27,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
           <stop offset="1" stopColor="var(--accent)" stopOpacity="0.8" />
         </linearGradient>
 
-        {/* Text gradient */}
         <linearGradient
           id="amalText"
           x1="20"
@@ -43,10 +40,8 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         </linearGradient>
       </defs>
 
-      {/* Ambient glow */}
       <circle cx="32" cy="32" r="29" fill="url(#amalAura)" />
 
-      {/* Elegant outer arc — intentionally incomplete */}
       <path
         d="M12.5 39.5
            C9.8 31.8 11.8 23.3 17.7 17.3
@@ -57,7 +52,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         strokeLinecap="round"
       />
 
-      {/* Second flowing arc */}
       <path
         d="M51.5 35
            C49.7 44.2 42.1 51.4 32.8 52.4
@@ -68,7 +62,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         opacity="0.3"
       />
 
-      {/* Rising sun */}
       <path
         d="M21 31
            C21 24.8 25.9 20 32 20
@@ -79,10 +72,8 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         opacity="0.75"
       />
 
-      {/* Sun center */}
       <circle cx="32" cy="20" r="2.1" fill="var(--accent)" opacity="0.9" />
 
-      {/* Minimal sun rays */}
       <path
         d="M32 15.5V12.5"
         stroke="var(--accent)"
@@ -107,7 +98,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         opacity="0.45"
       />
 
-      {/* Arabic association name */}
       <text
         x="32"
         y="38.5"
@@ -123,7 +113,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         أمل
       </text>
 
-      {/* Growing stem */}
       <path
         d="M32 41
            C32 43.5 31.5 45.5 30.2 47.3"
@@ -133,7 +122,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         opacity="0.65"
       />
 
-      {/* Left leaf */}
       <path
         d="M30.7 44.8
            C27.4 42.7 24.8 43.1 22.7 45.4
@@ -142,7 +130,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         opacity="0.55"
       />
 
-      {/* Right leaf */}
       <path
         d="M31.1 46
            C34.2 43.7 37 43.7 39.5 45.5
@@ -151,7 +138,6 @@ const AmalLogo = ({ className = "h-10 w-10" }) => {
         opacity="0.4"
       />
 
-      {/* Small accent dot */}
       <circle cx="48.5" cy="18" r="1.2" fill="var(--accent)" opacity="0.45" />
     </svg>
   );

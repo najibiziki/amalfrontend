@@ -82,11 +82,9 @@ const Navbar = ({ onSupport }) => {
               </NavLink>
             ))}
 
-            {/* Main action */}
             <SupportButton onClick={onSupport} className="ml-3" />
           </nav>
 
-          {/* Mobile menu button */}
           <button
             type="button"
             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}

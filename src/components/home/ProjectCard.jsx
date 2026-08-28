@@ -1,6 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
+  const navigate = useNavigate();
+
+  const handleOpenProject = () => {
+    navigate(`/projets/${project._id}`);
+  };
+
   return (
     <article className="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--bg-secondary)] shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow)]">
       <div className="relative overflow-hidden">
@@ -28,7 +35,11 @@ const ProjectCard = ({ project }) => {
           {project.description}
         </p>
 
-        <button className="mt-5 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-strong)]">
+        <button
+          type="button"
+          onClick={handleOpenProject}
+          className="mt-5 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-[var(--accent-strong)]"
+        >
           Découvrir le projet →
         </button>
       </div>
