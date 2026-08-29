@@ -21,7 +21,7 @@ const MainLayout = () => {
       <Navbar onSupport={openDonationModal} />
 
       <main>
-        <Outlet />
+        <Outlet context={{ onSupport: openDonationModal }} />
       </main>
 
       <Footer onSupport={openDonationModal} />
