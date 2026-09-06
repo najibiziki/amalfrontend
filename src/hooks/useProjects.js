@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const API_URL = import.meta.env.VITE_API_URL;
+
 const useProjects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,7 @@ const useProjects = () => {
 
         const data = await response.json();
 
-        setProjects(data);
+        setProjects(data.projects);
       } catch (err) {
         console.error("Projects error:", err);
         setError(err.message);

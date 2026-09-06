@@ -1,25 +1,26 @@
+import { useEffect, useState } from "react";
 import Container from "../common/Container";
-
-const stats = [
-  {
-    number: "12.5K+",
-    label: "Personnes accompagnées",
-  },
-  {
-    number: "48",
-    label: "Projets réalisés",
-  },
-  {
-    number: "320+",
-    label: "Bénévoles actifs",
-  },
-  {
-    number: "14",
-    label: "Communautés accompagnées",
-  },
-];
+import api from "../../services/api";
 
 const Impact = () => {
+  const [stats, setStats] = useState([]);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const data = await api("/api/stats");
+
+        if (Array.isArray(data)) {
+          setStats(data);
+        }
+      } catch (error) {
+        console.error("Erreur chargement statistiques:", error);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
   return (
     <section className="bg-[var(--bg)] py-20">
       <Container>
@@ -39,7 +40,7 @@ const Impact = () => {
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-4">
           {stats.map((stat, index) => (
             <div
-              key={stat.label}
+              key={stat._id || index}
               className="group bg-[var(--bg-secondary)] p-7 transition-colors duration-300 hover:bg-[var(--accent)]"
             >
               <p className="font-[var(--heading)] text-[length:var(--font-2xl)] font-bold tracking-tight text-[var(--text-h)] transition-colors group-hover:text-[#16171d] sm:text-[length:var(--font-3xl)]">

@@ -32,7 +32,7 @@ const useProject = (id) => {
 
         const data = await response.json();
 
-        setProject(data);
+        setProject(data.project);
       } catch (err) {
         console.error("Project error:", err);
         setError(err.message);

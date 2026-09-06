@@ -5,6 +5,9 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
 }
 
 body {
@@ -32,8 +35,6 @@ body {
   width: 100%;
   min-height: 100vh;
 }
-
-/* Base typography */
 
 h1,
 h2,
@@ -66,30 +67,36 @@ button {
   cursor: pointer;
 }
 
-/* Responsive base typography */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-strong);
+}
+
+.modal {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
 
 @media (max-width: 1024px) {
   body {
     font-size: 16px;
   }
-}
-
-.social-stories-scroll {
-  overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
-}
-
-.social-stories-scroll::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
-}
-
-.social-stories-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.social-stories-scroll::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 999px;
 }

@@ -1,21 +1,18 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex items-center justify-center px-6">
+    <div className="flex min-h-screen items-center justify-center bg-[var(--bg)] px-6 text-[var(--text)]">
       <div className="relative w-full max-w-2xl text-center">
-        {/* Decorative glow */}
         <div className="absolute left-1/2 top-1/2 -z-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)]/10 blur-3xl" />
 
         <div className="relative z-10">
-          {/* 404 */}
           <div className="mb-6">
-            <span className="font-mono text-[clamp(7rem,20vw,12rem)] font-bold leading-none tracking-tighter text-transparent bg-gradient-to-br from-[var(--accent)] to-[var(--accent-strong)] bg-clip-text">
+            <span className="bg-gradient-to-br from-[var(--accent)] to-[var(--accent-strong)] bg-clip-text font-mono text-[clamp(7rem,20vw,12rem)] font-bold leading-none tracking-tighter text-transparent">
               404
             </span>
           </div>
 
-          {/* Content */}
           <h1 className="mb-4 text-2xl font-bold tracking-tight text-[var(--text-h)] sm:text-3xl">
             Page not found
           </h1>
@@ -25,11 +22,10 @@ function NotFound() {
             may have been moved, deleted, or the URL might be incorrect.
           </p>
 
-          {/* Actions */}
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent-strong)] px-5 py-2.5 text-sm font-semibold text-[#16171d] shadow-[var(--shadow)] transition-all duration-200 hover:bg-[var(--accent-strong)] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
+            <Link
+              to="/"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent-strong)] px-5 py-2.5 text-sm font-semibold text-[#16171d] shadow-[var(--shadow)] transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +42,7 @@ function NotFound() {
                 />
               </svg>
               Back to home
-            </a>
+            </Link>
 
             <button
               type="button"
@@ -57,7 +53,6 @@ function NotFound() {
             </button>
           </div>
 
-          {/* Small status */}
           <div className="mt-10 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg-secondary)] px-3 py-1.5 font-mono text-xs text-[var(--text)]">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
             <span>404 / NOT_FOUND</span>
