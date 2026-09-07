@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+
+import { useAuth } from "../../context/AuthContext";
 
 const navItems = [
   {
@@ -18,11 +20,21 @@ const navItems = [
 
 const AdminNavigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const menuRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const { logout } = useAuth();
 
   const currentItem =
     navItems.find((item) => location.pathname === item.to) || navItems[0];
+
+  const handleLogout = () => {
+    logout();
+    setMobileMenuOpen(false);
+    navigate("/admin/login", { replace: true });
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -53,34 +65,62 @@ const AdminNavigation = () => {
           shadow-[var(--shadow)]
         "
       >
-        <div className="flex items-center">
-          <div className="hidden items-center gap-1 sm:flex">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  `
-                    rounded-lg
-                    px-4
-                    py-2.5
-                    text-sm
-                    font-medium
-                    transition-all
-                    duration-200
-                    ${
-                      isActive
-                        ? "bg-[var(--accent-bg)] text-[var(--text-h)] shadow-sm"
-                        : "text-[var(--text)] hover:bg-[var(--bg)] hover:text-[var(--text-h)]"
-                    }
-                  `
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+        <div className="flex w-full items-center">
+          {/* Desktop */}
+          <div className="hidden w-full items-center sm:flex">
+            <div className="flex items-center gap-1">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `
+                      rounded-lg
+                      px-4
+                      py-2.5
+                      text-sm
+                      font-medium
+                      transition-all
+                      duration-200
+                      ${
+                        isActive
+                          ? "bg-[var(--accent-bg)] text-[var(--text-h)] shadow-sm"
+                          : "text-[var(--text)] hover:bg-[var(--bg)] hover:text-[var(--text-h)]"
+                      }
+                    `
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Logout pushed completely to the right */}
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="
+                ml-auto
+                rounded-lg
+                px-4
+                py-2.5
+                text-sm
+                font-medium
+                text-red-500
+                transition-all
+                duration-200
+                hover:bg-red-500/10
+                hover:text-red-600
+                focus:outline-none
+                focus:ring-2
+                focus:ring-red-500/30
+              "
+            >
+              Déconnexion
+            </button>
           </div>
 
+          {/* Mobile */}
           <div ref={menuRef} className="relative w-full sm:hidden">
             <button
               type="button"
@@ -182,6 +222,31 @@ const AdminNavigation = () => {
                   {item.label}
                 </NavLink>
               ))}
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="
+                  mt-1
+                  block
+                  w-full
+                  rounded-lg
+                  border-t
+                  border-[var(--border)]
+                  px-3.5
+                  py-3
+                  text-left
+                  text-sm
+                  font-medium
+                  text-red-500
+                  transition-colors
+                  duration-200
+                  hover:bg-red-500/10
+                  hover:text-red-600
+                "
+              >
+                Déconnexion
+              </button>
             </div>
           </div>
         </div>

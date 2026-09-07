@@ -12,13 +12,14 @@ import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminProjects from "./pages/Admin/AdminProjects";
 import AdminStats from "./pages/Admin/AdminStats";
 import AdminPayment from "./pages/Admin/AdminPayment";
-
+import ScrollToTop from "./components/common/ScrollToTop";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AuthProvider>
         <Routes>
           <Route element={<MainLayout />}>

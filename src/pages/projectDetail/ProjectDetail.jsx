@@ -133,14 +133,7 @@ const ProjectDetail = () => {
             </Link>
           </div>
 
-          <div
-            className="
-              absolute
-              bottom-0
-              left-0
-              right-0
-            "
-          >
+          <div className="absolute bottom-0 left-0 right-0">
             <div
               className="
                 mx-auto
@@ -276,6 +269,7 @@ const ProjectDetail = () => {
           )}
         </div>
 
+        {/* Project description */}
         <div className="mx-auto mt-10 max-w-3xl">
           <p
             className="
@@ -287,25 +281,6 @@ const ProjectDetail = () => {
           >
             {project.description}
           </p>
-
-          <div className="mt-8 space-y-6">
-            <p className="text-base leading-8 text-[var(--text)]">
-              Ce projet s'inscrit dans les actions menées par notre association
-              afin de répondre aux besoins de notre communauté. Nous travaillons
-              chaque jour pour créer un impact positif et durable.
-            </p>
-
-            <p className="text-base leading-8 text-[var(--text)]">
-              À travers cette initiative, nous souhaitons accompagner les
-              personnes concernées et leur apporter un soutien concret.
-            </p>
-
-            <p className="text-base leading-8 text-[var(--text)]">
-              Grâce à la mobilisation de nos bénévoles, de nos partenaires et de
-              toutes les personnes qui soutiennent notre association, ce projet
-              peut prendre vie.
-            </p>
-          </div>
         </div>
 
         <div className="mt-14 border-t border-[var(--border)] pt-8">
