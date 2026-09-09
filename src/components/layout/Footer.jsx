@@ -125,7 +125,9 @@ const Footer = ({ onSupport }) => {
               <div className="mt-5 flex items-center justify-center gap-2 sm:justify-start">
                 {/* WhatsApp */}
                 <a
-                  href="#"
+                  href="https://wa.me/212XXXXXXXXX"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="WhatsApp"
                   className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] text-[var(--text)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/[0.08] hover:text-[var(--accent)]"
                 >
@@ -140,7 +142,9 @@ const Footer = ({ onSupport }) => {
 
                 {/* Instagram */}
                 <a
-                  href="#"
+                  href="https://www.instagram.com/YOUR_USERNAME/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] text-[var(--text)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/[0.08] hover:text-[var(--accent)]"
                 >
@@ -163,7 +167,9 @@ const Footer = ({ onSupport }) => {
 
                 {/* Facebook */}
                 <a
-                  href="#"
+                  href="https://www.facebook.com/YOUR_PAGE/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                   className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] text-[var(--text)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/[0.08] hover:text-[var(--accent)]"
                 >
@@ -178,7 +184,9 @@ const Footer = ({ onSupport }) => {
 
                 {/* LinkedIn */}
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/YOUR_COMPANY/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.025] text-[var(--text)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/[0.08] hover:text-[var(--accent)]"
                 >

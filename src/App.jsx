@@ -15,7 +15,7 @@ import AdminPayment from "./pages/Admin/AdminPayment";
 import ScrollToTop from "./components/common/ScrollToTop";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
-
+import AdminRegister from "./pages/Admin/AdminRegister";
 function App() {
   return (
     <BrowserRouter>
@@ -30,7 +30,7 @@ function App() {
           </Route>
 
           <Route path="/admin/login" element={<AdminLogin />} />
-
+          <Route path="/admin/register" element={<AdminRegister />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/admin" element={<AdminLayout />}>
               <Route

@@ -9,3 +9,14 @@ export const loginAdmin = async (email, password) => {
     }),
   });
 };
+
+export const registerAdmin = async (name, email, password) => {
+  return api("/api/auth/register", {
+    method: "POST",
+    body: JSON.stringify({
+      name,
+      email,
+      password,
+    }),
+  });
+};

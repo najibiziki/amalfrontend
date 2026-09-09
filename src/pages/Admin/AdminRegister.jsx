@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../context/AuthContext";
-import { loginAdmin } from "../../services/authService";
+import { registerAdmin } from "../../services/authService";
 
-const AdminLogin = () => {
+const AdminRegister = () => {
   const { login, isAuthenticated } = useAuth();
 
   const navigate = useNavigate();
-  const location = useLocation();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,23 +26,31 @@ const AdminLogin = () => {
 
     setError("");
 
-    if (!email || !password) {
+    if (!name || !email || !password || !confirmPassword) {
       setError("Veuillez remplir tous les champs.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Les mots de passe ne correspondent pas.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Le mot de passe doit contenir au moins 6 caractères.");
       return;
     }
 
     try {
       setLoading(true);
 
-      const data = await loginAdmin(email, password);
+      const data = await registerAdmin(name, email, password);
 
       login(data.user, data.token);
 
-      const destination = location.state?.from?.pathname || "/admin/projects";
-
-      navigate(destination, { replace: true });
+      navigate("/admin/projects", { replace: true });
     } catch (error) {
-      setError(error.message || "Identifiants incorrects.");
+      setError(error.message || "Une erreur est survenue.");
     } finally {
       setLoading(false);
     }
@@ -56,11 +65,11 @@ const AdminLogin = () => {
           </p>
 
           <h1 className="font-[var(--heading)] text-3xl font-bold text-[var(--text-h)]">
-            Connexion
+            Créer un compte
           </h1>
 
           <p className="mt-3 text-[var(--text)]">
-            Connectez-vous pour gérer les projets.
+            Créez votre compte administrateur.
           </p>
         </div>
 
@@ -76,6 +85,25 @@ const AdminLogin = () => {
 
           <div className="mb-5">
             <label
+              htmlFor="name"
+              className="mb-2 block text-sm font-semibold text-[var(--text-h)]"
+            >
+              Nom
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              autoComplete="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="Votre nom"
+              className="w-full rounded-xl border border-gray-200 px-4 py-3 outline-none transition focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+            />
+          </div>
+
+          <div className="mb-5">
+            <label
               htmlFor="email"
               className="mb-2 block text-sm font-semibold text-[var(--text-h)]"
             >
@@ -85,7 +113,7 @@ const AdminLogin = () => {
             <input
               id="email"
               type="email"
-              autoComplete="username"
+              autoComplete="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="admin@example.com"
@@ -93,7 +121,7 @@ const AdminLogin = () => {
             />
           </div>
 
-          <div className="mb-6">
+          <div className="mb-5">
             <label
               htmlFor="password"
               className="mb-2 block text-sm font-semibold text-[var(--text-h)]"
@@ -104,9 +132,28 @@ const AdminLogin = () => {
             <input
               id="password"
               type="password"
-              autoComplete="current-password"
+              autoComplete="new-password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+              placeholder="••••••••"
+              className="w-full rounded-xl border border-gray-200 px-4 py-3 outline-none transition focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+            />
+          </div>
+
+          <div className="mb-6">
+            <label
+              htmlFor="confirmPassword"
+              className="mb-2 block text-sm font-semibold text-[var(--text-h)]"
+            >
+              Confirmer le mot de passe
+            </label>
+
+            <input
+              id="confirmPassword"
+              type="password"
+              autoComplete="new-password"
+              value={confirmPassword}
+              onChange={(event) => setConfirmPassword(event.target.value)}
               placeholder="••••••••"
               className="w-full rounded-xl border border-gray-200 px-4 py-3 outline-none transition focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
             />
@@ -117,16 +164,16 @@ const AdminLogin = () => {
             disabled={loading}
             className="w-full rounded-xl bg-[#6d28a9] px-5 py-3 font-semibold text-white shadow-[0_8px_25px_rgba(109,40,169,0.22)] transition hover:-translate-y-0.5 hover:bg-[#7e2dbb] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {loading ? "Connexion..." : "Se connecter"}
+            {loading ? "Création..." : "Créer le compte"}
           </button>
 
           <p className="mt-6 text-center text-sm text-[var(--text)]">
-            Vous n'avez pas encore de compte ?{" "}
+            Vous avez déjà un compte ?{" "}
             <Link
-              to="/admin/register"
+              to="/admin/login"
               className="font-semibold text-[#6d28a9] transition hover:text-[#7e2dbb]"
             >
-              Créer un compte
+              Se connecter
             </Link>
           </p>
         </form>
@@ -135,4 +182,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default AdminRegister;

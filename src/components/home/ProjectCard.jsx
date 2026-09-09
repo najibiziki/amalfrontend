@@ -31,7 +31,7 @@ const ProjectCard = ({ project }) => {
           {project.title}
         </h3>
 
-        <p className="mt-3 font-[var(--sans)] text-[length:var(--font-sm)] leading-6 text-[var(--text)]">
+        <p className="mt-3 line-clamp-2 font-[var(--sans)] text-[length:var(--font-sm)] leading-6 text-[var(--text)]">
           {project.description}
         </p>
 
